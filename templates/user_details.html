@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Details Page</h2>
+<a href="{% url 'logout_user' %}">Logout</a>
+<table>
+	<tr>
+		<th>category_name</th>
+		<th>title</th>
+		<th>image_photographer</th>
+		<th>image_description</th>
+		<th>image_filename</th>
+	</tr>
+{% for art_detail in art_details.data %}
+	<tr>
+		<th>{{art_detail.category_name}}</th>
+		<th>{{art_detail.title}}</th>
+		<th>{{art_detail.image_photographer}}</th>
+		<th>{{art_detail.image_description}}</th>
+		<th><img height=35 src='https://static.mahattaart.com/300x300/media/{{art_detail.image_filename}}' /></th>
+
+		
+	</tr>
+{% endfor %}
+</table>
+
+</body>
+</html>
